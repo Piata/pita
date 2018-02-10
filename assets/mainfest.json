@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Pita",
+  "description": "This extension restyles piazza",
+  "version": "0.1.0",
+
+  "browser_action": {
+    "default_title": "pita"
+  },
+
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["https://piazza.com/*"],
+      "css": ["pita.css"],
+      "js": ["bundle.js"]
+    }
+  ],
+
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "*://*.piazza.com/*"
+  ]
+}
